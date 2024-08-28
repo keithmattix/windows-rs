@@ -335,8 +335,8 @@ pub unsafe fn GetBestRoute2(interfaceluid: Option<*const super::Ndis::NET_LUID_L
     GetBestRoute2(core::mem::transmute(interfaceluid.unwrap_or(std::ptr::null())), interfaceindex, core::mem::transmute(sourceaddress.unwrap_or(std::ptr::null())), destinationaddress, addresssortoptions, bestroute, bestsourceaddress)
 }
 #[inline]
-pub unsafe fn GetCurrentThreadCompartmentId() -> super::super::Foundation::WIN32_ERROR {
-    windows_targets::link!("iphlpapi.dll" "system" fn GetCurrentThreadCompartmentId() -> super::super::Foundation:: WIN32_ERROR);
+pub unsafe fn GetCurrentThreadCompartmentId() -> u32 {
+    windows_targets::link!("iphlpapi.dll" "system" fn GetCurrentThreadCompartmentId() -> u32);
     GetCurrentThreadCompartmentId()
 }
 #[inline]
@@ -345,8 +345,8 @@ pub unsafe fn GetCurrentThreadCompartmentScope(compartmentscope: *mut u32, compa
     GetCurrentThreadCompartmentScope(compartmentscope, compartmentid)
 }
 #[inline]
-pub unsafe fn GetDefaultCompartmentId() -> super::super::Foundation::WIN32_ERROR {
-    windows_targets::link!("iphlpapi.dll" "system" fn GetDefaultCompartmentId() -> super::super::Foundation:: WIN32_ERROR);
+pub unsafe fn GetDefaultCompartmentId() -> u32 {
+    windows_targets::link!("iphlpapi.dll" "system" fn GetDefaultCompartmentId() -> u32);
     GetDefaultCompartmentId()
 }
 #[inline]
